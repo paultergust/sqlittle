@@ -1,4 +1,4 @@
-#include "input_buffer.c"
+#include "input_buffer.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
