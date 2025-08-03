@@ -30,12 +30,26 @@ typedef enum {
     STATEMENT_INSERT, STATEMENT_SELECT
 } StatementType;
 
-#define COLUMN_USERNAME_SIZE 32
-#define COLUMN_EMAIL_SIZE 255
+typedef enum {
+    COLUMN_INT,
+    COLUMN_TEXT,
+    COLUMN_BIN,
+} ColumnType;
+
 typedef struct {
-    uint32_t id;
-    char username[COLUMN_USERNAME_SIZE + 1];
-    char email[COLUMN_EMAIL_SIZE + 1];
+    char* name;
+    ColumnType type;
+    size_t size;
+} Column;
+
+typedef struct {
+    size_t column_count;
+    Column* columns;
+} TableSchema;
+
+typedef struct {
+    TableSchema* schema;
+    void** values;
 } Row;
 
 typedef struct {
