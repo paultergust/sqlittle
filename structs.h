@@ -27,7 +27,10 @@ typedef enum {
 } PrepareResult;
 
 typedef enum {
-    STATEMENT_INSERT, STATEMENT_SELECT
+    STATEMENT_INSERT, 
+    STATEMENT_SELECT,
+    STATEMENT_UPDATE,
+    STATEMENT_DELETE,
 } StatementType;
 
 typedef enum {
